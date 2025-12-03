@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Cotizador RockCode · Adecco</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Cotizador modular de recursos e-learning RockCode para Adecco." />
+
+  <!-- Tipografía corporativa -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Estilos RockCode -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+  <div class="page">
+    <div class="card">
+      <!-- HEADER -->
+      <header class="header">
+        <div class="brand">
+          <!-- Reemplazar por <img src="assets/img/logo-rockcode.svg" alt="RockCode" class="brand-logo-img" /> si quieres -->
+          <div class="brand-logo">R</div>
+          <div>
+            <div class="brand-text-title">RockCode</div>
+            <div class="brand-text-sub">Cotizador modular · Recursos e-learning (Adecco)</div>
+          </div>
+        </div>
+        <div class="meta">
+          <div class="badge">Uso interno · Pri / RockCode</div>
+          <div>Proyecto: Cotizador Adecco</div>
+          <div>Versión: v0.1.0</div>
+          <div>Autoría: Rockwell Harrison &amp; Spark</div>
+        </div>
+      </header>
+
+      <!-- TÍTULO + UF -->
+      <div class="title-row">
+        <div class="title-left">
+          <div class="eyebrow">Tarifario por recursos</div>
+          <h1 class="title-main">Arma tu curso sumando componentes.</h1>
+          <p class="title-sub">
+            Ingresa el valor de la UF y las cantidades de cada recurso (cápsulas, PDFs, minutos, etc.).
+            El cotizador calcula automáticamente los totales en UF, CLP neto y CLP con IVA.
+          </p>
+        </div>
+
+        <aside class="uf-box">
+          <div class="uf-label">Valor de referencia · UF en CLP</div>
+          <div class="uf-input-row">
+            <span>$</span>
+            <input id="ufInput" type="number" min="0" step="100" placeholder="ej: 36500" />
+          </div>
+          <div class="uf-hint">
+            Este valor es referencial. El monto final se ajusta a la UF vigente al momento de la
+            aceptación / orden de compra.
+          </div>
+        </aside>
+      </div>
+
+      <!-- TABLA -->
+      <section class="table-wrapper" aria-label="Cotizador de recursos e-learning">
+        <table>
+          <thead>
+            <tr>
+              <th>Recurso</th>
+              <th>Tamaño</th>
+              <th>Unidad</th>
+              <th class="num">UF sin IVA</th>
+              <th class="num">Cantidad</th>
+              <th class="num">UF total</th>
+              <th class="num">CLP neto</th>
+              <th class="num">CLP c/ IVA</th>
+            </tr>
+          </thead>
+          <tbody id="resources-body">
+            <!-- Se llena dinámicamente desde app.js -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- TOTALES -->
+      <section class="totals-row" aria-label="Totales cotización">
+        <div class="totals-main">
+          <div class="chip">
+            <span class="chip-label">Total UF:</span>
+            <span id="totalUf" class="chip-value">0,00</span>
+          </div>
+          <div class="chip">
+            <span class="chip-label">Total CLP neto:</span>
+            <span id="totalClpNet" class="chip-value">$ 0</span>
+          </div>
+          <div class="chip">
+            <span class="chip-label">Total CLP c/ IVA:</span>
+            <span id="totalClpIva" class="chip-value">$ 0</span>
+          </div>
+        </div>
+        <p class="totals-note">
+          Usa este total como referencia para cada curso/app. RockCode valida y ajusta la propuesta
+          final según el alcance real y los recursos necesarios.
+        </p>
+      </section>
+
+      <!-- NOTA -->
+      <footer class="footnote">
+        <p>
+          Nota: valores base en UF según matriz S/M/L RockCode. Esta herramienta está pensada como
+          soporte de estimación rápida para Pri. La propuesta económica formal se emite siempre desde
+          RockCode SpA.
+        </p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Lógica del cotizador -->
+  <script src="assets/js/app.js"></script>
+</body>
+
+</html>
